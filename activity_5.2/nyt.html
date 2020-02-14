@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <script>
+        //let link1 = "https://nyti.ms/t96CGqN1ULYMiHtA6kf6hbt0kAauGbDJ";
+        let link1 = "https://api.nytimes.com/svc/search/v2/articlesearch.json?q=election&api-key=t96CGqN1ULYMiHtA6kf6hbt0kAauGbDJ";
+        fetch(link1)
+            .then(response = > {return response.json()})
+            .then(json = > console.log(json))
+            .catch(err = > alert.err)
+    </script>
+</body>
+
+</html>

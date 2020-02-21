@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <canvas id="myCanvas" width="500" height="500" style="border:1px solid #000000;">
+    </canvas>
+
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+        ctx.fillStyle = "#FF0000";
+        ctx.fillRect(0, 0, 100, 500);
+        ctx.font = "30px Arial";
+         //ctx.fillText("Siddarth Menon", 100, 200);
+        ctx.fillText("659680736", 100, 300);
+
+        function drawS() {
+            var canvas = document.getElementById("myCanvas");
+            var ctx = canvas.getContext("2d");
+            ctx.linewidth = 90;
+            ctx.strokeStyle = 'green';
+            ctx.moveTo(350, 350);
+            ctx.lineTo(400, 350);
+            ctx.lineTo(400, 325);
+            ctx.lineTo(350, 325);
+            ctx.lineTo(350, 300);
+            ctx.lineTo(350, 300);
+            ctx.lineTo(400, 300);
+            ctx.stroke();
+        }
+        document.getElementsByTagName("body").innerHTML = window.drawS();
+    </script>
+
+
+</body>
+
+</html>

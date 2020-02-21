@@ -40,12 +40,12 @@
 <body>
     <script>
         // endpoint variable
-        let apiEndpoint = "https://data.cityofchicago.org/resource/ygr5-vcbg.json";
+        let apiEndpoint = "https://data.cityofchicago.org/resource/ygr5-vcbg.json?make=%27CHEVY%27";
         let url = apiEndpoint;
-        fetch(url).then(response = > {
-            return response.json()
-        }).then(json = > console.log(json)).
-        catch(err = > alert(err))
+        fetch(url)
+          .then ( response => {return response.json()} )
+          .then ( json => console.log(json) )
+          .catch(err => alert(err)) 
     </script>
 </body>
 

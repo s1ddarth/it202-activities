@@ -4,23 +4,23 @@
 <body>
 
     <canvas id="C1">    </canvas>
-
     <script>
         //var canvas = document.getElementById("myCanvas");
         //var ctx = canvas.getContext("2d");
         let c = document.querySelector("#C1");
         let ctx = c.getContext("2d");
-        let player = {x: 100, y:100};
+        let player = {x: 100, y:100, radius: 50};
         const draw = () =>{
             //Clears the canvas
             ctx.clearRect(0, 0, c.width, c.height);
             
             //sets the increment for the circle to move
             player.x +=1
+            if(player.x >= c.width+player.radius)    player.x=-player.radius;
             
             //drawing
             ctx.beginPath();
-            ctx.arc(player.x, player.y, 50, 0, Math.PI*2);
+            ctx.arc(player.x, player.y, player.radius, 0, Math.PI*2);
             ctx.closePath();
             ctx.fill();
             
@@ -33,8 +33,6 @@
         //ctx.arc(100,100,50,0, Math.PI*2);
         draw();
     </script>
-
-
 </body>
 
 </html>

@@ -5,10 +5,10 @@
     <meta charset="utf-8">
     <title>Shopping list example</title>
     <style>
-        li {
+        listItem {
             margin-bottom: 10px;
         }
-        li button {
+        listItem button {
             font-size: 8px;
             margin-left: 20px;
             color: #666;
@@ -23,41 +23,49 @@
     <div>
         <label for="item">Enter a new item:</label>
         <input type="text" name="item" id="item">
-        <button>Add item</button>
+        <button id="addButton">Add item</button>
     </div>
 
-    <ul></ul>
+    <ul>
+
+    </ul>
 
     <script>
         //Task 2
-        const listVar = document.querySelector('ul');
-        const inputVar = document.querySelector('input');
-        const buttonVar = document.querySelector('button');
-         //Task 3
-        buttonVar.onclick = function() {
-            //Task 4
-            let myItem = inputVar.value;
-            //Task 5
-            inputVar.value = '';
-            //Task 6
-            const listItem = document.createElement('li');
-            const listText = document.createElement('span');
-            const listBtn = document.createElement('button');
-            //Task 7
-            listItem.appendChild(listText);
-            listText.textContent = myItem;
-            listItem.appendChild(listBtn);
-            //Task 8
-            listBtn.textContent = 'Delete';
-            //Task 9
-            listVar.appendChild(listItem);
-            //Task 10
-            listBtn.onclick = function(e) {
-                listVar.removeChild(listItem);
-            }
-            //Task 11
-            inputVar.focus();
+        const list = document.querySelector("ul");
+        const input = document.querySelector("input");
+        const button = document.querySelector("button");
+        
+        //Task 3
+        const addItem = () => {
+            button.addEventListener("click", () => {
+                //Task 4    
+                let inputText = input.value;
+                //Task 5
+                input.value = '';
+                //Task 6
+                const listItem = document.createElement("li");
+                const span = document.createElement("span");
+                const listButton = document.createElement("button");
+                //Task 7
+                listItem.appendChild(span);
+                listItem.appendChild(listButton);
+                span.textContent = inputText;
+                //Task 8
+                listButton.textContent = 'Delete';
+                //Task 9
+                list.appendChild(listItem);
+                //Task 10
+                listButton.addEventListener("click", () => {
+                    list.removeChild(listItem);
+                });
+                //Task 11
+                input.focus();
+            });    
         }
+
+        //call function
+        addItem();
     </script>
 </body>
 

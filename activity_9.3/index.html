@@ -67,15 +67,25 @@
     <div id="data" class="view">Data</div>
     <div id="about" class="view">About</div>
 
-    <!-- <button class="mdc-button foo-button mdc-button--raised">
-    <div class="mdc-button__ripple"></div>
-    <span class="mdc-button__label">Button</span>
-  </button> -->
+    <button class="mdc-button mdc-button--raised">
+      <div class="mdc-button__ripple"></div>
+      <span class="mdc-button__label">Button 1</span>
+    </button>
+
+    <button class="mdc-button mdc-button--raised">
+      <div class="mdc-button__ripple"></div>
+      <span class="mdc-button__label">Button 2</span>
+    </button>
+
+    <button class="mdc-button mdc-button--raised">
+      <div class="mdc-button__ripple"></div>
+      <span class="mdc-button__label">Button 3</span>
+    </button>
   </main>
 
 
   <script>
-    // mdc.ripple.MDCRipple.attachTo(document.querySelector('.foo-button'));
+    mdc.ripple.MDCRipple.attachTo(document.querySelector('.mdc-button'));
 
     mdc.topAppBar.MDCTopAppBar.attachTo(document.querySelector('header.mdc-top-app-bar'));
 
